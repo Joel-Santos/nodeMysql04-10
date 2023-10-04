@@ -1,0 +1,10 @@
+iniciamos o projeto
+npm init -y
+
+instalando dependencias
+express => servidor
+nodemon => 
+knex => mediador com o banco de dados
+cors => verificação das requisições
+
+
