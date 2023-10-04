@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro de Aluno</h1>
+    <% if (aluno.length > 0) { %>
+        <% aluno.forEach(function(a1) {%>
+    <form action="/atualizar/aluno/<%=a1.matricula%>?_method=PUT" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="<%=a1.nome%> " required><br><br>
+        <input type="hidden" name="_method" value="PUT">
+
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma" name="turma" required><br><br>
+
+        <label>Gênero:</label>
+        <input type="radio" id="M" name="genero" value="M" required>
+        <label for="genero_m">Masculino</label>
+        <input type="radio" id="F" name="genero" value="F" required>
+        <label for="genero_f">Feminino</label>
+        <input type="radio" id="O" name="genero" value="O" required>
+        <label for="genero_o">Outro</label><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="matricula">Matrícula:</label>
+        <input type="text" id="matricula" name="matricula" value="<%= a1.matricula%>" disabled><br><br>
+
+        <input type="submit" value="Enviar">
+        <% }); %>
+        <% } %>
+    </form>
+</body>
+</html>
